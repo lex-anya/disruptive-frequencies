@@ -1,0 +1,90 @@
+<!-- Challenge 2 - Disruptive Frequency -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge - Disruptive Frequency</title>
+    <link rel="stylesheet" href="challenge2.css">
+</head>
+<body>
+    <div class="container" id="screen1">
+        <p class="message flashback">Access the frequencies that can disrupt Astra's system to buy you more time before your memories are wiped.</p>
+        <p class="message flashback">Work as a team. If you cannot play the sounds together, you will remain trapped forever. I need you to remember this so we can break the loop. We only managed to get this far the last time.</p>
+        <button class="action-btn" id="playSoundsBtn1">Access the frequencies</button>
+    </div>
+
+    <div class="container" id="screen2" style="display: none;">
+        <p class="message">Enter the passphrase:</p>
+        <div class="input-group">
+            <input type="text" id="word1" class="input-field" placeholder="">
+            <input type="text" id="word2" class="input-field" placeholder="">
+            <input type="text" id="word3" class="input-field" placeholder="">
+            <input type="text" id="word4" class="input-field" placeholder="">
+        </div>
+        <button class="action-btn" id="playSoundsBtn2">Access the frequencies</button>
+        <p class="error-message" id="errorMessage" style="display: none;">Access denied. Please enter the correct passphrase.</p>
+    </div>
+
+    <div class="glitch-container" id="screen3" style="display: none;"></div>
+
+    <div class="container" id="screen4" style="display: none;">
+        <div class="hint">
+            <span class="hint-icon" id="hintIcon">💡</span>
+            <span class="hint-message flashback" id="hintMessage">Remember: As of now, it is better to rely on yourselves than on a device. The sounds must match up exactly.</span>
+        </div>
+        <ul class="sound-list">
+            <li class="sound-item">
+                <img src="compSciKid.png" class="icon" alt="Icon 1">
+                <button class="sound-btn" onclick="playSound(1)">🔊</button>
+                <audio id="sound1" src="sound1.mp3"></audio>
+                <div class="sound-wave" id="wave1">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </li>
+            <li class="sound-item">
+                <img src="compSciKid.png" class="icon" alt="Icon 2">
+                <button class="sound-btn" onclick="playSound(2)">🔊</button>
+                <audio id="sound2" src="sound2.mp3"></audio>
+                <div class="sound-wave" id="wave2">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </li>
+            <li class="sound-item">
+                <img src="compSciKid.png" class="icon" alt="Icon 3">
+                <button class="sound-btn" onclick="playSound(3)">🔊</button>
+                <audio id="sound3" src="sound3.mp3"></audio>
+                <div class="sound-wave" id="wave3">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </li>
+            <li class="sound-item">
+                <img src="compSciKid.png" class="icon" alt="Icon 4">
+                <button class="sound-btn" onclick="playSound(4)">🔊</button>
+                <audio id="sound4" src="sound4.mp3"></audio>
+                <div class="sound-wave" id="wave4">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script src="challenge2.js"></script>
+</body>
+</html>

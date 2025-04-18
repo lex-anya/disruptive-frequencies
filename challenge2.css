@@ -1,0 +1,329 @@
+body {
+    background-color: #0a0a0a;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    text-align: center;
+    border: 2px solid #00ff00;
+    padding: 30px; 
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    position: relative; 
+}
+
+.message {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.access-btn, .action-btn {
+    padding: 10px 20px;
+    border: 2px solid #00ff00;
+    background-color: #0a0a0a;
+    color: #00ff00;
+    cursor: pointer;
+}
+
+.input-field {
+    padding: 10px;
+    border: 2px solid #00ff00;
+    background-color: #0a0a0a;
+    color: #00ff00;
+    margin-bottom: 20px;
+    width: calc(100% - 24px); 
+    box-sizing: border-box; 
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-group .input-field {
+    width: calc(25% - 10px); 
+}
+
+.error-message {
+    color: #ff0000;
+    margin-top: 20px;
+}
+
+.sound-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sound-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px; 
+    padding: 10px;
+    border: 2px solid #00ff00; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    background-color: #1a1a1a; 
+    position: relative;
+}
+
+.icon {
+    width: 80px; 
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; 
+}
+
+.sound-btn {
+    font-size: 2.5em; 
+    padding: 10px;
+    border: 2px solid #00ff00;
+    background-color: #0a0a0a;
+    color: #00ff00;
+    cursor: pointer;
+    margin-right: 20px; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.sound-wave {
+    display: none; 
+    align-items: center;
+    position: relative; 
+    margin-left: 20px; 
+    height: 55px; 
+    width: 80px;
+}
+
+.bar {
+    width: 10px;
+    height: 100%; 
+    background-color: #00ff00;
+    margin: 0 5px; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-play-state: paused; 
+}
+
+@keyframes animate1 {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(0.6);
+    }
+}
+
+@keyframes animate2 {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(0.4);
+    }
+}
+
+@keyframes animate3 {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(0.7);
+    }
+}
+
+@keyframes animate4 {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(0.3);
+    }
+}
+
+@keyframes animate5 {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(0.5);
+    }
+}
+
+.bar:nth-child(1) {
+    animation: animate1 linear 0.7s infinite;
+    animation-play-state: paused;
+}
+.bar:nth-child(2) {
+    animation: animate2 linear 1s infinite;
+    animation-play-state: paused;
+}
+.bar:nth-child(3) {
+    animation: animate3 linear 1.3s infinite;
+    animation-play-state: paused;
+}
+.bar:nth-child(4) {
+    animation: animate4 linear 0.6s infinite;
+    animation-play-state: paused;
+}
+.bar:nth-child(5) {
+    animation: animate5 linear 0.9s infinite;
+    animation-play-state: paused;
+}
+
+.hint {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    z-index: 10;
+}
+
+.hint-icon {
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 10px; 
+    margin-top: 10px; 
+}
+
+.hint-message {
+    visibility: hidden;
+    width: 300px; 
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px; 
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; 
+    left: 50%;
+    margin-left: -150px; 
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.hint-icon:hover + .hint-message {
+    visibility: visible;
+    opacity: 1;
+}
+
+.flashback {
+    font-family: 'Courier New', Courier, monospace;
+    color: #00ff00;
+    opacity: 0.7;
+    font-style: italic;
+    border-left: 2px solid #00ff00;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.glitch-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ensure it takes the full height of the viewport */
+    overflow: hidden;
+    background-color: #0a0a0a;
+}
+
+.glitch-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #00ff00;
+    animation: glitch-animation 0.2s infinite;
+}
+
+@keyframes glitch-animation {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    20% {
+        transform: translateX(-20px);
+        opacity: 0.8;
+    }
+    40% {
+        transform: translateX(20px);
+        opacity: 0.6;
+    }
+    60% {
+        transform: translateX(-10px);
+        opacity: 0.4;
+    }
+    80% {
+        transform: translateX(10px);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes glitch-flicker {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    .message {
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+
+    .access-btn, .action-btn {
+        padding: 8px 16px; /* Adjust button padding for smaller screens */
+    }
+
+    .input-field {
+        font-size: 0.9em; /* Adjust text size for better readability on smaller screens */
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    .input-group .input-field {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .sound-item {
+        flex-direction: column;
+        align-items: center; /* Center items vertically for smaller screens */
+    }
+
+    .icon {
+        font-size: 1.5em; /* Adjust icon size for smaller screens */
+        margin-right: 0; /* Remove margin for smaller screens */
+    }
+
+    .sound-btn {
+        font-size: 0.9em; /* Adjust button size for smaller screens */
+        margin-top: 5px; /* Add margin to the top of the button for smaller screens */
+    }
+
+    .hint-icon {
+        font-size: 1.5em; /* Adjust hint icon size for smaller screens */
+    }
+
+    .hint-message {
+        width: 150px; /* Adjust hint message width for smaller screens */
+    }
+}
