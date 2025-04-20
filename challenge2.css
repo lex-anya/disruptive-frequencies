@@ -229,56 +229,12 @@ body {
     margin-bottom: 20px;
 }
 
-.glitch-container {
+.video-container {
     position: relative;
     width: 100%;
     height: 100vh; /* Ensure it takes the full height of the viewport */
     overflow: hidden;
     background-color: #0a0a0a;
-}
-
-.glitch-line {
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: #00ff00;
-    animation: glitch-animation 0.2s infinite;
-}
-
-@keyframes glitch-animation {
-    0% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    20% {
-        transform: translateX(-20px);
-        opacity: 0.8;
-    }
-    40% {
-        transform: translateX(20px);
-        opacity: 0.6;
-    }
-    60% {
-        transform: translateX(-10px);
-        opacity: 0.4;
-    }
-    80% {
-        transform: translateX(10px);
-        opacity: 0.2;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes glitch-flicker {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
 }
 
 /* Media Queries for Responsive Design */
